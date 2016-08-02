@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Drone Reporting on BND demonstration</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="40">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="video-span" data-spy="affix">
+          <div id="video-container">
+            <video id="video" width="640" height="360" controls allowfullscreen="false">
+              <source src="video/bnd-spaziergang-1.mp4" type="video/mp4">
+              <source src="video/bnd-spaziergang-1.ogv" type="video/ogg">
+            </video>
+            <canvas id="video-canvas" width="640" height="300"></canvas>
+          </div>
+          <div id="map" class="dark"></div>
+          <div id="info">
+            <p>
+              <a href="#intro" role="button" data-toggle="modal">Info and Impressum</a> -
+              <a href="#lessons-learned">Lessons learned</a>
+            </p>
+          </div>
+        </div>
+        <div class="content">
+          <div id="navbar" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+              <ul class="nav">
+                <li><a href="#bnd-hq">New BND HQ</a></li>
+                <li><a href="#front-gate">Front Gate</a></li>
+                <li><a href="#spy-school">Spy School</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#closing">Closing Rally</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-content">
+            <h1>A Walk along the new BND Headquarters</h1>
+            <div id="bnd-hq" class="section">
+              <h2>BND HQ</h2>
+              <p>
+                The new headquarters of the Bundesnachrichtendienst (BND), Germany's Foreign Secret Agency, at Chausseestraße near U-Bahn stop Schwarzkopfstr. is giant.
+                With 260,000 squaremeters it is way bigger than other recent constructions of the federal government.
+                For example the new building of the federal ministry of education and research (BMBF) next to Berlin central station is about five times smaller (54,000 square meters).
+              </p>
+
+              <h4>A comparison</h4>
+              <ul>
+                <li>
+                  A football (soccer) field for country matches:
+                  <div style="margin: 5px;width:33px;height:22px;background-color:grey"></div>
+                </li>
+                <li>
+                  Area of the construction site of the ministry of education and research:
+                  <div style="margin: 5px;width:90px;height:60px;background-color:grey"></div>
+                </li>
+                <li>
+                  Area of the new headquarters of the BND:
+                  <div style="margin: 5px;width:200px;height:130px;background-color:grey"></div>
+                </li>
+              </ul>
+
+              <ul class="thumbnails">
+                <li class="span6">
+                  <a class="thumbnail" href="http://www.flickr.com/photos/cbmd/3031440107/" title="CC-By-NC-ND cbmd">
+                    <img src="http://farm4.staticflickr.com/3204/3031440107_2853d67f71_z.jpg" width="640" height="480" alt="BND Headquarters">
+                  </a>
+                </li>
+                <li class="span6">
+                  <a class="thumbnail" href="http://www.flickr.com/photos/cbmd/3032277684/" title="CC-By-NC ubiquit23">
+                    <img src="http://farm6.staticflickr.com/5539/9393514747_8647e82c45_z.jpg" width="640" height="480" alt="BND Headquarters">
+                  </a>
+                </li>
+                <li class="span12">
+                  <a class="thumbnail" href="http://www.flickr.com/photos/cyzen/9396465420/in/set-72157634845202051" title="CC-By-NC ubiquit23">
+                    <img src="http://farm3.staticflickr.com/2855/9396465420_cf4d850606_z.jpg" width="640" height="480" alt="BND Headquarters">
+                  </a>
+                </li>
+              </ul>
+              <p>
+                All visible buildings in the above panorama picture – from the unfinished building on the far left to the white one on the far right – are part of the BND head quarters.
+              </p>
+              <p>
+                According to renderings by the architects, the currently opaque construction wall will be replaced by a more see-through fence.
+                Right now, one needs a drone to take a peek over the wall.
+              </p>
+              <p>
+                <small>Pictures
+                  <a href="http://creativecommons.org/licenses/by-nc/2.0/deed.en">CC-By-NC</a> by <a href="http://www.flickr.com/photos/cyzen/">ubiquit23</a>,
+                  <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en">CC-By-NC-ND</a> by <a href="http://www.flickr.com/photos/cbmd/">cbmd</a>,
+                </small><br/>
+                More information on the building:
+                <ul>
+                  <li>
+                    <a href="http://www.bbr.bund.de/cln_032/nn_21462/DE/Berlin/Sicherheit/BND/bnd.html">Bundesamt für Bauwesen und Raumordnung on new BND HQ</a>
+                  </li>
+                  <li>
+                    <a href="http://www.stadtentwicklung.berlin.de/planen/staedtebau-projekte/bnd/index.shtml">Senatsverwaltung für Stadtentwicklung on new BND HQ</a>
+                  </li>
+                </ul>
+              </p>
+            </div>
+            <div id="front-gate" class="section">
+              <h2>Front Gate</h2>
+
+              <p>
+                The demonstration participants gathered at the north east corner of the headquarters just as rain started to pour down. Luckily, it stopped raining after a couple of speeches and the protest march started going down Chausseestr. to the front gate.
+              </p>
+
+              <ul class="thumbnails">
+                <li class="span12">
+                  <a class="thumbnail" href="http://www.flickr.com/photos/cyzen/9393699135/" title="CC-By-NC by ubiquit23">
+                    <img src="http://farm8.staticflickr.com/7321/9393699135_0c1aff9f39_z.jpg" alt="Demo in front of BND Headquarters">
+                  </a>
+                </li>
+              </ul>
+
+              <p>
+                The demonstration stopped in front of the headquarter's main gate for another round of speeches.
+              </p>
+
+              <ul class="thumbnails">
+                <li class="span12">
+                  <a class="thumbnail" href="http://www.flickr.com/photos/cyzen/9393525427/in/set-72157634845202051/" title="CC-By-NC by ubiquit23">
+                    <img src="http://farm3.staticflickr.com/2875/9393525427_873e39e249_z.jpg" alt="Demo in front of BND Headquarters">
+                  </a>
+                </li>
+              </ul>
+              <p>
+                <small>Pictures <a href="http://creativecommons.org/licenses/by-nc/2.0/deed.en">CC-By-NC</a> by <a href="http://www.flickr.com/photos/cyzen/9393697785/">ubiquit23</a>
+                </small>
+              </p>
+            </div>
+
+            <div id="spy-school" class="section">
+              <h2>Spy School</h2>
+              <p>
+                This as-of-yet unfinished building at the far south end will be a visitors center, a training center for 550 trainees and a boarding school with 110 apartments.
+              </p>
+              <ul class="thumbnails">
+                <li class="span12">
+                  <a class="thumbnail" href="http://www.flickr.com/photos/cyzen/9393526815/sizes/z/in/set-72157634845202051/" title="CC-By-NC by ubiquit23">
+                    <img src="http://farm8.staticflickr.com/7383/9393526815_bf35ca1916_z.jpg" width="640" height="480" alt="Schulungszentrum des BND">
+                  </a>
+                </li>
+              </ul>
+              <p>
+                <small>
+                  <a href="http://creativecommons.org/licenses/by-nc/2.0/deed.en">CC-By-NC</a> by <a href="http://www.flickr.com/photos/cyzen/">ubiquit23</a>
+                </small>
+              </p>
+              <p>Links:
+              <ul>
+                <li>
+                  <a href="http://www.bbr.bund.de/cln_032/nn_21462/DE/Berlin/Sicherheit/BND/BND__Schule/bndschule.html">
+                    Details at the Bundesamt für Bauwesen und Raumordnung
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div id="demo" class="section">
+              <h2>Demonstration</h2>
+              <p>
+                The protest march continued into Habersaathstraße moving towards the south-west corner of the BND site.
+              </p>
+              <p>
+                Participants brought many creative signs to protest out-of-control surveillance.
+              </p>
+
+              <ul class="thumbnails">
+                <li class="span3">
+                  <a class="thumbnail" href="http://www.flickr.com/photos/ekvidi/9402883652/sizes/z/in/set-72157634863531082/" title="BND Headquarters, CC-By-NC-SA by ekvidi, on Flickr">
+                    <img src="http://farm3.staticflickr.com/2817/9402883652_2568f9a78d_z.jpg" alt="BND Demonstration">
+                  </a>
+                </li>
+                <li class="span3">
+                  <a class="thumbnail" href="http://www.flickr.com/photos/ekvidi/9400123339/sizes/z/in/set-72157634863531082/" title="BND Headquarters, CC-By-NC-SA by ekvidi, on Flickr">
+                    <img src="http://farm4.staticflickr.com/3726/9400123339_8ab2aef9ca_z.jpg" alt="BND Demonstration">
+                  </a>
+                </li>
+                <li class="span3">
+                  <a class="thumbnail" href="http://www.flickr.com/photos/ekvidi/9400125359/sizes/z/in/set-72157634863531082/" title="BND Headquarters, CC-By-NC-SA by ekvidi, on Flickr">
+                    <img src="http://farm8.staticflickr.com/7410/9400125359_eec63aa7b5_z.jpg" alt="BND Demonstration">
+                  </a>
+                </li>
+                <li class="span3">
+                  <a class="thumbnail" href="http://www.flickr.com/photos/ekvidi/9402888930/sizes/z/in/set-72157634863531082/" title="BND Headquarters, CC-By-NC-SA by ekvidi, on Flickr">
+                    <img src="http://farm3.staticflickr.com/2824/9402888930_8c07481a12_z.jpg" alt="BND Demonstration">
+                  </a>
+                </li>
+              </ul>
+              <p>
+                <a href="http://www.flickr.com/photos/ekvidi/sets/72157634863531082/with/9400123339/">More pictures by ekvidi on Flickr</a> under <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC-By-NC-SA</a>.
+              </p>
+            </div>
+            <div id="closing" class="section">
+              <h2>Closing Rally</h2>
+              <p>
+                A closing rally took place at the south-west corner of the BND site. More speeches were given as it started to rain again. The crowd dissolved soon afterwards but with the promise to come back if nothing would change.
+              </p>
+              <a class="thumbnail" href="http://www.flickr.com/photos/cyzen/9396297714/sizes/z/in/set-72157634845202051/" title="At closing rally, CC-By-NC-SA by ubiquit23, on Flickr">
+                <img src="http://farm8.staticflickr.com/7399/9396297714_199084b56e_z.jpg" alt="At closing rally">
+              </a>
+              <p>
+                <small>
+                  <a href="http://creativecommons.org/licenses/by-nc/2.0/deed.en">CC-By-NC</a> by <a href="htt://www.flickr.com/photos/cyzen/">ubiquit23</a>
+                </small>
+              </p>
+            </div>
+            <div id="lessons-learned" class="section">
+              <h2>Lessons learned</h2>
+              <p>Some lessons were learned, most of them obvious in hindsight.</p>
+              <ul>
+                <li>Have another battery pack for the drone.</li>
+                <li>Take steady videos rather than moving around a lot.</li>
+                <li>Police reacted more positively to the drone than expected: "Please be careful not to fly into the street car power lines" and "Where can I buy that for my son?".</li>
+                <li>Adjust focus of drone camera.</li>
+                <li>Don't crash drone. Twice. (was edited out)</li>
+                <li>Actually tell a story.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="intro" class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Experiment: Reporting with a drone</h3>
+      </div>
+      <div class="modal-body">
+        <p>I brought my <a href="http://ardrone2.parrot.com/">AR Parrot Drone</a> to the demonstration „No Risk, No Fun – Experience secret agencies up close“ organized by <a href="https://digitalegesellschaft.de/">Digitale Gesellschaft</a>. It took place in front of the new headquarters of the German BND in Berlin on 29th of July 2013.</p>
+        <p>This is a try to incorporate video material of the drone with fotos, text and a map powered by <a href="http://popcornjs.org">Popcorn.js</a>.</p>
+        <h5>Impressum</h5>
+        <p><small>Stefan Wehrmeyer, Leinestr. 33, 12049 Berlin<br/>+49 151 15550559, mail[at]stefanwehrmeyer.com</small></p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">Close</a>
+      </div>
+    </div>
+    <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.smooth-scroll.min.js"></script>
+    <script src="js/popcorn-complete.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/marker.rotate.js"></script>
+
+    <script src="js/bnd-demo.js"></script>
+  </body>
+</html>
